@@ -1,4 +1,4 @@
-name: latihan_kuis_a
+name: latihan_kuis_123230016_ayudya_cans
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:
