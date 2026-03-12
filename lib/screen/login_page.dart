@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_kuis_123230016_ayudya_cans/screen/movie_list_page.dart';
+import 'package:quiz_123230016/screen/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   void login() {
+
     String username = usernameController.text;
     String password = passwordController.text;
 
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const MovieListPage(),
+          builder: (context) => ListPage(username: username),
         ),
       );
 
@@ -42,11 +43,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF0F6), // pink soft background
+      backgroundColor: const Color(0xFFFFF0F6),
+
       body: Center(
         child: Container(
           width: 280,
           padding: const EdgeInsets.all(20),
+
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
@@ -58,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
               )
             ],
           ),
+
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -77,10 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                 controller: usernameController,
                 decoration: InputDecoration(
                   hintText: "Username",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.pink),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -94,10 +94,6 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Password",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.pink),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -110,13 +106,12 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: login,
+
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.pink,
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
                   ),
+
                   child: const Text("Login"),
                 ),
               ),
